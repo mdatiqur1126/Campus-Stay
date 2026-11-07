@@ -1,0 +1,258 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>College Guest House | Room Booking</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <!-- HEADER -->
+    <header class="site-header">
+        <div class="container nav-container">
+            <a class="logo" href="#home">Campus <span>Stay</span></a>
+            <nav>
+                <a href="#home">Home</a>
+                <a href="#rooms">Rooms</a>
+                <a href="#availability">Availability</a>
+                <a href="#booking">Book a Room</a>
+                <a href="#contact">Contact</a>
+                <a id="login-nav-btn">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <!-- HOME SECTION (Background Image via HTML img tag) -->
+        <section class="hero" id="home">
+            <!-- Yahan apni background image ka naam daalein -->
+            <img src="bg.jpg" alt="Campus Background" class="hero-img">
+            
+            <div class="hero-content container">
+                <p class="eyebrow">COLLEGE GUEST HOUSE</p>
+                <h1>A comfortable stay<br>for every visit.</h1>
+                <p class="hero-text">A convenient place for parents and guests visiting our campus for admissions, convocation and special occasions.</p>
+                <a class="button" href="#rooms">Explore Rooms</a>
+            </div>
+        </section>
+
+        <!-- ROOM CARDS -->
+        <section class="section container" id="rooms">
+            <div class="section-heading">
+                <p class="eyebrow">OUR ACCOMMODATION</p>
+                <h2>Choose your room</h2>
+                <p>Comfortable rooms with essential facilities for a pleasant stay.</p>
+            </div>
+            
+            <div class="room-grid" id="room-list">
+                
+                <!-- ROOM 1 -->
+                <article class="room-card">
+                    <!-- Yahan Room 1 ki image ka naam daalein -->
+                    <img src="standard-room.jpg" alt="Standard Double Room">
+                    <div class="room-info">
+                        <h3>Standard Double Room</h3>
+                        <p class="amenities">Double bed, Wi-Fi, attached bathroom</p>
+                        <p class="room-price">₹1,500 / night</p>
+                        <a class="small-button" href="#booking" data-room="0">Book this room</a>
+                    </div>
+                </article>
+
+                <!-- ROOM 2 -->
+                <article class="room-card">
+                    <!-- Yahan Room 2 ki image ka naam daalein -->
+                    <img src="executive-suite.jpg" alt="Executive AC Suite">
+                    <div class="room-info">
+                        <h3>Executive AC Suite</h3>
+                        <p class="amenities">AC, king-size bed, TV, Wi-Fi</p>
+                        <p class="room-price">₹2,500 / night</p>
+                        <a class="small-button" href="#booking" data-room="1">Book this room</a>
+                    </div>
+                </article>
+
+                <!-- ROOM 3 -->
+                <article class="room-card">
+                    <!-- Yahan Room 3 ki image ka naam daalein -->
+                    <img src="vip-suite.jpg" alt="VIP Suite">
+                    <div class="room-info">
+                        <h3>VIP Suite</h3>
+                        <p class="amenities">Premium room, sitting area, AC, TV</p>
+                        <p class="room-price">₹4,000 / night</p>
+                        <a class="small-button" href="#booking" data-room="2">Book this room</a>
+                    </div>
+                </article>
+
+            </div>
+        </section>
+
+        <!-- AVAILABILITY CALENDAR -->
+        <section class="section calendar-section" id="availability">
+            <div class="container">
+                <div class="section-heading">
+                    <p class="eyebrow">PLAN YOUR VISIT</p>
+                    <h2>Room availability</h2>
+                    <p>Check the sample calendar before sending a booking request.</p>
+                </div>
+                <div class="calendar-card">
+                    <div class="calendar-top">
+                        <button class="calendar-arrow" id="prev-month" aria-label="Previous month">&#8592;</button>
+                        <h3 id="month-year">Month Year</h3>
+                        <button class="calendar-arrow" id="next-month" aria-label="Next month">&#8594;</button>
+                    </div>
+                    <div class="calendar-grid calendar-weekdays">
+                        <span>Sun</span><span>Mon</span><span>Tue</span><span>Wed</span>
+                        <span>Thu</span><span>Fri</span><span>Sat</span>
+                    </div>
+                    <div class="calendar-grid" id="calendar-days"></div>
+                    <div class="calendar-legend">
+                        <span><i class="legend-dot available"></i> Available</span>
+                        <span><i class="legend-dot booked"></i> Booked</span>
+                        <span><i class="legend-dot selected"></i> Selected</span>
+                    </div>
+                    <p class="small-note">This is a frontend demonstration calendar. Sample booked dates are set in the script file.</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- BOOKING FORM -->
+        <section class="section container" id="booking">
+            <div class="section-heading">
+                <p class="eyebrow">RESERVATION REQUEST</p>
+                <h2>Book your stay</h2>
+                <p>Enter the details below to calculate your estimated room charges.</p>
+            </div>
+
+            <form id="booking-form" class="booking-card">
+                <div class="form-grid">
+                    <div class="field">
+                        <label for="parent-name">Parent / Guest Name *</label>
+                        <input type="text" id="parent-name" placeholder="Enter full name" required>
+                    </div>
+                    <div class="field">
+                        <label for="roll-number">Student Roll Number *</label>
+                        <input type="text" id="roll-number" placeholder="Enter student roll number" required>
+                    </div>
+                    <div class="field">
+                        <label for="id-type">ID Proof Type *</label>
+                        <select id="id-type" required>
+                            <option value="">Select ID proof</option>
+                            <option>Aadhaar Card</option>
+                            <option>Driving Licence</option>
+                            <option>Passport</option>
+                            <option>Voter ID</option>
+                            <option>Other</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="id-number">ID Proof Details *</label>
+                        <input type="text" id="id-number" placeholder="Enter demo ID details" required>
+                    </div>
+                    <div class="field">
+                        <label for="room-type">Room Type *</label>
+                        <select id="room-type" required></select>
+                    </div>
+                    <div class="field">
+                        <label for="meal-plan">Meal Plan</label>
+                        <select id="meal-plan">
+                            <option value="0">No meals – ₹0</option>
+                            <option value="one-time">One-time meal (Breakfast / Lunch / Dinner) – ₹150</option>
+                            <option value="150">Breakfast – ₹150 per night</option>
+                            <option value="300">Breakfast + Dinner – ₹300 per night</option>
+                            <option value="500">Breakfast + Lunch + Dinner – ₹500 per night</option>
+                        </select>
+                    </div>
+                    <div class="field">
+                        <label for="check-in">Check-in Date *</label>
+                        <input type="date" id="check-in" required>
+                    </div>
+                    <div class="field">
+                        <label for="check-out">Check-out Date *</label>
+                        <input type="date" id="check-out" required>
+                    </div>
+                </div>
+
+                <div class="price-summary">
+                    <div><span>Number of nights</span><strong id="night-count">0</strong></div>
+                    <div><span>Room charges</span><strong id="room-charge">₹0</strong></div>
+                    <div><span>Meal charges</span><strong id="meal-charge">₹0</strong></div>
+                    <div class="total"><span>Estimated total</span><strong id="total-charge">₹0</strong></div>
+                </div>
+
+                <p class="small-note">Demo only: please do not enter real identity-document numbers. This website does not send information to a server.</p>
+                <button class="button submit-button" type="submit">Submit Booking Request</button>
+                <p id="booking-message" class="booking-message" role="status"></p>
+            </form>
+        </section>
+
+        <!-- CONTACT SECTION -->
+        <section class="section container" id="contact">
+            <div class="section-heading">
+                <p class="eyebrow">NEED HELP?</p>
+                <h2>Contact our guest house assistant</h2>
+                <p>Speak with the guest house team if you need help with your visit.</p>
+            </div>
+            <div class="contact-card">
+                <div>
+                    <h3>Guest House Help Desk</h3>
+                    <p>Call the assistant for questions about rooms, facilities or booking procedures.</p>
+                    <p class="small-note">Official assistance contact details can be added here.</p>
+                </div>
+                <button class="button assistance-button" type="button" id="assistance-button">Call Assistance</button>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <div class="container footer-content">
+            <p><strong>Campus Stay</strong> · College Guest House Booking System</p>
+        </div>
+    </footer>
+
+    <!-- LOGIN MODAL -->
+    <div id="login-modal" class="login-modal">
+        <div class="login-card">
+            <button class="close-modal" id="close-login">&times;</button>
+            <p class="eyebrow">WELCOME TO CAMPUS STAY</p>
+            <h1>Guest Login</h1>
+            <p class="login-intro">Choose who is logging in.</p>
+
+            <form id="login-form">
+                <div class="field">
+                    <label for="user-role">Login as</label>
+                    <select id="user-role" required>
+                        <option value="student">Student</option>
+                        <option value="parent">Parent / Guardian</option>
+                    </select>
+                </div>
+
+                <div class="field" id="student-uid-field">
+                    <label for="student-uid">Student UID</label>
+                    <input type="text" id="student-uid" placeholder="Enter college student UID" required>
+                </div>
+
+                <div class="field" id="parent-mobile-field" hidden>
+                    <label for="parent-mobile">Parent's mobile number</label>
+                    <input type="tel" id="parent-mobile" placeholder="Enter 10-digit mobile number"
+                           pattern="[0-9]{10}" maxlength="10">
+                    <small>Use the parent's own contact number.</small>
+                </div>
+
+                <div class="field">
+                    <label for="login-password">Password</label>
+                    <input type="password" id="login-password" placeholder="Enter password" required minlength="4">
+                </div>
+
+                <button class="button login-button" type="submit">Login</button>
+                <p id="login-message" class="booking-message" role="status"></p>
+                <p class="small-note">
+                    For parents: enter the student's UID to link the booking to that student,
+                    and enter the parent's own mobile number for contact.
+                    This is a frontend demo only; it does not verify UID, password or mobile number.
+                </p>
+            </form>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
